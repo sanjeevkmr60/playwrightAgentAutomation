@@ -1,0 +1,102 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Stage project files for initial commit",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				".gitignore",
+				".github",
+				".vscode",
+				"package.json",
+				"package-lock.json",
+				"playwright.config.js",
+				"playwright.config.ts",
+				"specs",
+				"tests"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Unstage temporary task file",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"rm",
+				"--cached",
+				"--",
+				".vscode/tasks.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Unstage generated task file force",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"rm",
+				"--cached",
+				"-f",
+				"--",
+				".vscode/tasks.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Review staged project files",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"diff",
+				"--cached",
+				"--name-only"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify staged paths without pager",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"-c",
+				"core.pager=cat",
+				"diff",
+				"--cached",
+				"--name-only"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Create initial project commit",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"commit",
+				"-m",
+				"Demo: Added the testcases with built-in Agent creation for Playwright"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Push initial main branch",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"-u",
+				"origin",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
